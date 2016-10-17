@@ -6,6 +6,11 @@
 官网英文地址(自备梯子):
 <https://golang.org/dl/>
 
+linux：
+```
+$ wget https://storage.googleapis.com/golang/go1.7.1.linux-amd64.tar.gz
+$ sudo tar -C /usr/local -xzf go1.7.1.linux-amd64.tar.gz
+```
 
 ## Golang 官网
 
@@ -26,15 +31,26 @@ $ godoc -http=:6060
 
 
 ## 设置系统环境变量
+
 ```
-$ subl .bashrc
+$ sudo vim /etc/profile
+    # Golang environment variable
+    export GOROOT=/usr/local/go
+    export GOPATH=$HOME/work
+    export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+$ source /etc/profile
+```
 
-# Golang environment variable
-export GOROOT=$HOME/go
-export PATH=$PATH:$GOROOT/bin
-export GOPATH=$HOME/code/golang
+或者仅为当前用户设置环境变量
+```
+$ vim ~/.bashrc
+$ source ~/.bashrc
+```
 
-$ source .bashrc
+注意：使用 zsh 的用户, 需要为 zsh 设置环境变量
+```
+$ vim ~/.zshrc
+$ source ~/.zshrc
 ```
 
 
